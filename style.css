@@ -1,0 +1,576 @@
+/* CampusFind - stylesheet bersama
+   Simpan file ini di: CampusFind/assets/style.css
+   Setelah semua halaman terhubung dan diuji, CSS inline lama bisa dipindahkan/dihapus bertahap.
+*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fc;
+    color: #1e293b;
+}
+
+/* Sidebar dan navigasi */
+.sidebar {
+    width: 245px;
+    height: 100vh;
+    background: #172554;
+    color: #fff;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 28px 18px;
+    overflow-y: auto;
+}
+
+.brand {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0 0 8px 8px;
+}
+
+.brand-subtitle {
+    color: #bfdbfe;
+    font-size: 12px;
+    margin: 0 8px 35px;
+    line-height: 1.6;
+}
+
+.menu-title {
+    color: #93c5fd;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 20px 8px 12px;
+    text-transform: uppercase;
+}
+
+.menu-link {
+    display: block;
+    padding: 13px 14px;
+    margin-bottom: 8px;
+    border-radius: 9px;
+    text-decoration: none;
+    color: #e2e8f0;
+    font-size: 14px;
+    transition: background .2s ease, color .2s ease;
+}
+
+.menu-link.active,
+.menu-link:hover {
+    background: #2563eb;
+    color: #fff;
+}
+
+/* Area utama dan header */
+.main {
+    margin-left: 245px;
+    padding: 30px;
+    min-width: 0;
+}
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+}
+
+.topbar h1,
+h1 {
+    font-size: 27px;
+    margin: 0 0 8px;
+}
+
+.topbar p,
+.subtitle {
+    color: #64748b;
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.top-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.language {
+    display: flex;
+    gap: 5px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    padding: 5px;
+    border-radius: 9px;
+}
+
+.language a {
+    padding: 8px 10px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #475569;
+    font-size: 12px;
+}
+
+.language a.active {
+    background: #dbeafe;
+    color: #1d4ed8;
+    font-weight: bold;
+}
+
+.profile {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    padding: 10px 14px;
+    font-size: 13px;
+}
+
+/* Kartu dan kotak konten */
+.content-box {
+    background: #fff;
+    padding: 24px;
+    border-radius: 14px;
+    border: 1px solid #e8edf5;
+    margin-bottom: 25px;
+}
+
+.section-title {
+    font-size: 18px;
+    margin: 0 0 18px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: #fff;
+    border: 1px solid #e8edf5;
+    padding: 23px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(15, 23, 42, .03);
+}
+
+.card-label {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 14px;
+}
+
+.card-number {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card-note {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.blue { border-top: 4px solid #2563eb; }
+.orange { border-top: 4px solid #f59e0b; }
+.green { border-top: 4px solid #10b981; }
+.purple { border-top: 4px solid #8b5cf6; }
+
+.box-heading,
+.toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.box-heading h2,
+.toolbar h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+/* Tombol */
+.button {
+    display: inline-block;
+    border: none;
+    background: #2563eb;
+    color: #fff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background .2s ease, transform .2s ease;
+}
+
+.button:hover {
+    background: #1d4ed8;
+}
+
+.button:active {
+    transform: translateY(1px);
+}
+
+.button-gray { background: #64748b; }
+.button-gray:hover { background: #475569; }
+
+.button-edit {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+.button-edit:hover { background: #bfdbfe; }
+
+.button-detail {
+    background: #dcfce7;
+    color: #166534;
+}
+.button-detail:hover { background: #bbf7d0; }
+
+.button-delete {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+.button-delete:hover { background: #fecaca; }
+
+/* Formulir dan pencarian */
+.search-form {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+    max-width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font: inherit;
+    font-size: 13px;
+    color: #1e293b;
+    background: #fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, .12);
+}
+
+.search-form input[type="text"] {
+    min-width: 200px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.form-group {
+    min-width: 0;
+}
+
+.form-group label,
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #334155;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #b91c1c;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.success-message {
+    padding: 12px;
+    margin-bottom: 18px;
+    background: #dcfce7;
+    color: #166534;
+    border-radius: 8px;
+}
+
+/* Tabel */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 650px;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 13px 11px;
+    border-bottom: 1px solid #edf0f5;
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+th {
+    color: #64748b;
+    background: #f8fafc;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+tbody tr:hover {
+    background: #fafcff;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+    white-space: nowrap;
+    background: #e2e8f0;
+    color: #334155;
+}
+
+.badge.hilang,
+.lost {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.badge.ditemukan,
+.found {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.badge.status {
+    background: #f1f5f9;
+    color: #334155;
+}
+
+.actions {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.actions .button {
+    padding: 8px 10px;
+    font-size: 11px;
+}
+
+.actions form {
+    margin: 0;
+}
+
+.empty {
+    padding: 35px;
+    text-align: center;
+    color: #64748b;
+}
+
+.total {
+    color: #64748b;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.footer {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 12px;
+    margin-top: 30px;
+}
+
+/* Detail laporan */
+.detail-box {
+    background: #fff;
+    padding: 24px;
+    border-radius: 14px;
+    border: 1px solid #e8edf5;
+}
+
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.detail-item {
+    padding-bottom: 14px;
+    border-bottom: 1px solid #edf0f5;
+    min-width: 0;
+}
+
+.detail-label {
+    color: #64748b;
+    font-size: 12px;
+    margin-bottom: 7px;
+}
+
+.detail-value {
+    color: #1e293b;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+/* Halaman login */
+body.login-page {
+    background: linear-gradient(135deg, #eaf2ff, #f8faff);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    background: #fff;
+    padding: 38px;
+    border-radius: 18px;
+    box-shadow: 0 12px 40px rgba(35, 67, 120, .12);
+}
+
+.logo {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 18px;
+    background: #2563eb;
+    color: #fff;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.login-container h1 {
+    text-align: center;
+    color: #1e293b;
+    margin-bottom: 8px;
+    font-size: 28px;
+}
+
+.login-container .subtitle {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.login-container input {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 13px;
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background: #1d4ed8;
+}
+
+.login-container .footer {
+    margin-top: 25px;
+}
+
+/* Responsif */
+@media (max-width: 1100px) {
+    .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 20px 15px;
+    }
+
+    .brand-subtitle {
+        margin-bottom: 15px;
+    }
+
+    .main {
+        margin-left: 0;
+        padding: 20px 15px;
+    }
+
+    .topbar h1,
+    h1 {
+        font-size: 23px;
+    }
+
+    .cards,
+    .form-grid,
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search-form {
+        width: 100%;
+    }
+
+    .search-form input[type="text"] {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .content-box,
+    .detail-box {
+        padding: 18px;
+    }
+
+    .login-container {
+        padding: 28px 22px;
+    }
+}
